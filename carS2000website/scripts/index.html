@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.cdnfonts.com/css/honda" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/narifah" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/nau-sea" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/digital-gothic" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/megabomb" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/kremlin-bolshevik" rel="stylesheet">
+                                
+</head>
+<body>
+  <div class="container">
+    <title>Home</title>
+    <h1>HONDA</h1>
+
+    <div class="info">
+        <div class="YEAR">
+            <span class="year">2009</span>
+        </div>
+        <div class="MODEL">
+            <span class="model">S2000</span>
+        </div>
+        <div class="starting">
+            <div class="starting_msrp">
+                <span class="starting_msrp_text">STARTING MSRP*</span>
+            </div>
+            <div class="starting_msrp_value">$36,995</div>
+            <div class="starting_slash">|</div>
+        </div>
+
+        <div class="MPG">
+            <div class="mpg">
+                <span class="mpg_text">CITY/HWY MPG RATING*</span>
+            </div>
+            <div class="mpg_value">18/25</div>
+        </div>
+    </div>
+    <div class="info-bottom">
+        <div class="info-container">
+            <div class="speed">
+                <span class="top-speed">153 MPH</span>
+            </div>
+            <div class="horsepower">
+                <span class="horse-power">237 HP</span>
+            </div>
+            <div class="zerotosixty">
+                <span class="zerosixty">0-60 in 6 seconds</span>
+            </div>
+            <div class="viewmore.">
+                <span class="View_more"></span>
+            </div>
+        </div>
+    </div>
+  </div>
+  <img src="pics/video/s2k_vid.mp4" alt="s2k_vid">
+  <div class="nav">
+    <nav>
+        <a class="specs-nav" href="specs.html">Specs</a>
+        <a class="gallery-nav" href="gallery.html">Gallery</a>
+    </nav>
+  </div>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentIndex = 0;
+        var images = [];
+        for (var i = 1; i <= 14; i++) {
+            images.push("pics/Exterior_base/i" + i + ".png");
+        }
+        var imageContainer = document.querySelector(".gallery .image-container img");
+
+        function updateImage() {
+            imageContainer.style.opacity = 0;
+            setTimeout(function() {
+                imageContainer.src = images[currentIndex];
+                imageContainer.style.opacity = 1;
+            }, 1000);
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(updateImage, 1000);
+    });
+</script>
+
